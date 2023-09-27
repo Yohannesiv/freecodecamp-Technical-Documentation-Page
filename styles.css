@@ -36,6 +36,10 @@ nav header {
     cursor: pointer;
   }
 
+  .navbar ul li a:hover {
+    color: #060607;
+  }
+
 .main {
     margin-left: 200px; 
     padding: 20px;
