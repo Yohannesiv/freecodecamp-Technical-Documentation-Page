@@ -2,6 +2,7 @@ body {
     background-color: #F5f6f7;
     margin: 0;
     line-height: 1.5;
+    font-family: 'Open Sans', Arial, sans-serif;
 }
 
 nav {
@@ -73,4 +74,12 @@ pre {
 
 .main-section a {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 815px) {
+  .main-section {
+      position: relative;
+      margin-left: 0px;
+      margin-top: 270px;
+  }
 }
