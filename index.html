@@ -25,20 +25,222 @@
             <li><a href="#reference">Reference</a></li>
         </ul>
     </nav>
-    <main id="main-doc">  
-        <section class="main-section" id="introduction"></section>
-        <section class="main-section" id="what_you_should_already_know"></section>
-        <section class="main-section" id="hello_world"></section>
-        <section class="main-section" id="variables"></section>
-        <section class="main-section" id="declaring_variables"></section>
-        <section class="main-section" id="variable_scope"></section>
-        <section class="main-section" id="global_variables"></section>
-        <section class="main-section" id="constants"></section>
-        <section class="main-section" id="data_types"></section>
-        <section class="main-section" id="if...else_statement"></section>
-        <section class="main-section" id="while_loop"></section>
-        <section class="main-section" id="function_declarations"></section>
-        <section class="main-section" id="reference"></section>  
+    <main id="main-doc" class="main">  
+        <section class="main-section" id="introduction">
+            <header>Introduction</header>
+            <p>Python is a popular general-purpose programming language that can be used for a wide range of applications. Some key features of Python include:</p>
+            <ul>
+                <li>High-level and interpreted language</li>
+                <li>Dynamically typed</li>
+                <li>Automatic memory management</li>
+                <li>Supports multiple programming paradigms (object-oriented, procedural, functional, etc.)</li>
+                <li>Large standard library and extensive third party modules</li>
+                <li>Cross-platform compatibility</li>
+            </ul>
+            <p>This document provides a basic overview of Python syntax, variables, data types, and flow control statements to help you get started with Python programming.</p>
+        </section>
+        <section class="main-section" id="what_you_should_already_know">
+            <header>What you should already know</header>
+            <p>Before starting with Python, you should have a basic understanding of:</p>
+            <ul>
+                <li>Programming concepts like variables, loops, conditional statements, functions, etc.</li>
+                <li>Some basic math like arithmetic, algebra, etc.</li>
+                <li>Basic computer and command line usage</li>
+            </ul>
+            <p>If you have experience with other programming languages like C, Java, JavaScript, etc., that will help you pick up Python faster.</p>
+        </section>
+        <section class="main-section" id="hello_world">
+            <header>Hello World</header>
+            <p>Let's start with the traditional "Hello World" program:</p>
+            <pre>
+                <code>
+                  print("Hello World!") 
+                </code>
+            </pre>
+            <p>This prints the text "Hello World!" to the output.</p>
+            <p>To run this, save it as hello.py and execute it:</p>
+            <pre>
+                <code>
+                    $ python hello.py
+                    Hello World!
+                </code>
+            </pre>
+        </section>
+        <section class="main-section" id="variables">
+            <header>Variables</header>
+            <p>Variables are used to store values in Python. They can be assigned with the = operator:</p>
+            <pre>
+                <code>
+                    name = "John"
+                    age = 25
+                </code>
+            </pre>
+            <p>You can print variables like:</p>
+            <pre>
+                <code>
+                    print(name)
+                    print(age)
+                </code>
+            </pre>
+            <p>Variables don't need type declarations in Python. The type is determined automatically based on the value assigned.</p>
+        </section>
+        <section class="main-section" id="declaring_variables">
+            <header>Declaring Variables</header>
+            <p>Python has no command for declaring variables. A variable is created the moment you assign a value to it:</p>
+            <pre>
+                <code>
+                    x = 5
+                    y = "Hello"
+                </code>
+            </pre>
+            <p>Variables must start with a letter or underscore. They can contain letters, numbers and underscores.</p>
+        </section>
+        <section class="main-section" id="variable_scope">
+            <header>Variable Scope</header>
+            <p>The scope of a variable is the part of the code where it is visible.</p>
+            <p>Variables defined inside a function are local to that function. They cannot be accessed outside:</p>
+            <pre>
+                <code>
+                    def myFunction():
+                        x = 5
+  
+                    myFunction()
+                    print(x) #Error, x not defined
+                </code>
+            </pre>
+            <p>Variables defined outside functions are global. They can be accessed globally:</p>
+            <pre>
+                <code>
+                    x = 5 
+
+                    def myFunction():
+                    print(x)
+
+                    myFunction() #Prints 5
+                    print(x) #Prints 5
+                </code>
+            </pre>
+        </section>
+        <section class="main-section" id="global_variables">
+            <header>Global Variables</header>
+            <p>The global keyword declares a variable global inside a function. This gives the function access to change the global variable:</p>
+            <pre>
+                <code>
+                    x = 5
+
+                    def myFunction():
+                    global x
+                    x = 7
+
+                    myFunction()  
+                    print(x) #Prints 7
+                </code>
+            </pre>
+        </section>
+        <section class="main-section" id="constants">
+            <header>Constants</header>
+            <p>Constants are variables whose value stays the same throughout the program. By convention, constants are usually named in all uppercase letters.</p>
+            <p>To define a constant, use the final keyword:</p>
+            <pre>
+                <code>
+                    PI = 3.14
+                    GRAVITY = 9.8 
+
+                    PI = 5 #Error, cannot change value
+                </code>
+            </pre>
+        </section>
+        <section class="main-section" id="data_types">
+            <header>Data Types</header>
+            <p>Python has several built-in data types:</p>
+            <ul>
+                <li>Numbers (int, float, complex)</li>
+                <li>Strings</li>
+                <li>Booleans</li>
+                <li>List</li>
+                <li>Tuple</li>
+                <li>Set</li>
+                <li>Dictionary</li>
+            </ul>
+            <p>You can check data types with type():</p>
+            <pre>
+                <code>
+                    x = 5
+                        print(type(x)) #Prints <class 'int'>
+
+                        y = 5.5
+                        print(type(y)) #Prints <class 'float'>
+                </code>
+            </pre>
+        </section>
+        <section class="main-section" id="if...else_statement">
+            <header>if...else Statement</header>
+            <p>The if statement executes code if a condition is true. The else statement executes code if the condition is false:</p>
+            <pre>
+                <code>
+                    age = 20
+                    if age >= 18:
+                        print("You are an adult")
+                    else:
+                        print("You are a minor")    
+                </code>
+            </pre>
+            <p>Multiple if...elif...else statements can be chained:</p>
+            <pre>
+                <code>
+                    if age <= 12:
+                    print("Child")
+                  elif age > 12 and age < 18:
+                    print("Teenager")  
+                  else:
+                    print("Adult")    
+                </code>
+            </pre>
+        </section>
+        <section class="main-section" id="while_loop">
+            <header>while Loop</header>
+            <p>The while loop runs as long as a condition is true:</p>
+            <pre>
+                <code>
+                    count = 0
+                    while count < 5:
+                    print(count)
+                    count += 1    
+                </code>
+            </pre>
+            <p>The break keyword exits the loop, and continue skips to the next iteration.</p>
+        </section>
+        <section class="main-section" id="function_declarations">
+            <header>Function Declarations</header>
+            <p>Functions are declared with the def keyword:</p>
+            <pre>
+                <code>
+                    def myFunction(param1, param2):
+                        print(param1 + param2)
+                    
+                    myFunction(5, 3) #Prints 8 
+                </code>
+            </pre>
+            <p>Parameters are optional, and can have default values:</p>
+            <pre>
+                <code>
+                    def greeting(name="User"):
+                        print("Hello " + name)
+
+                    greeting("John") #Hello John
+                    greeting() #Hello User
+                </code>
+            </pre>
+        </section>
+        <section class="main-section" id="reference">
+            <header>Reference</header>
+            <p>This covers the basics of Python programming. For more details, refer to:</p>
+            <ul>
+                <li><a href="https://docs.python.org/3/">Official Python Documentation</a></li>
+                <li><a href="https://www.w3schools.com/python/">Python Tutorial on W3Schools</a></li>
+                <li><a href="https://www.codecademy.com/learn/learn-python">Learn Python Course on CodeAcademy</a></li>
+            </ul>
+        </section>  
     </main>
 </body>
 </html>
