@@ -1,6 +1,7 @@
 body {
     background-color: #F5f6f7;
     margin: 0;
+    line-height: 1.5;
 }
 
 nav {
@@ -11,13 +12,28 @@ nav {
     top: 0;
     left: 0;
     overflow-x: hidden;
+    border-bottom: 1px solid ;
+}
+
+nav header {
+    padding: 16px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #4d4e53;   
+}
+
+.navbar ul {
+    list-style-type: none;
 }
 
 .navbar ul li a {
     padding: 16px;
     text-decoration: none;
     font-size: 18px;
+    color: #4d4e53;
     display: block;
+    cursor: pointer;
   }
 
 .main {
